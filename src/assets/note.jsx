@@ -111,14 +111,14 @@ const Add=()=>{
                 ✓
             </div>
 
-            <h2>Account Created!</h2>
+            <h2>Note added</h2>
 
             <p>
-                Welcome to Home-in-Japan 🎉
+                Noted a new mile_stone 🎉
             </p>
 
             <p className="success-small">
-                Taking you to your dashboard...
+                You added notes are successed
             </p>
 
         </div>
