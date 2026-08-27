@@ -1,8 +1,13 @@
 import {useState,useEffect,useRef} from "react"
 import "/src/index.css";
 function Items({id,name,del}){
+  // const today=new Date();
+  // const year=today.getFullYear();
+  // const Month=String(today.getMonth()+1).padStart(2,"0");
+  // const day=String(today.getDay()+1).padStart(2,"0");
+  // const weekday=today.toLocaleDateString("en-US",{weekday:"long"})
   return(
-    <div style={{marginTop:"50px"}}>
+    <div style={{marginTop:"70px"}}>
 
     
     <div style={{width:"460px"}}>
@@ -10,6 +15,14 @@ function Items({id,name,del}){
     <li className="notepara" style={{textAlign:"left",paddingTop:"10px"}}>
       {name}<br/>
       <div style={{display:"flex",flexdirection:"row",gap:"5px",marginTop:"15px",justifyContent:"flex-end"}}>
+        <p style={{fontSize:"10px",marginRight:"180px",width:"250px"}}>{new Date().getFullYear()} /{" "}
+  {String(new Date().getMonth() + 1).padStart(2, "0")} /{" "}
+  {String(new Date().getDate()).padStart(2, "0")}{" "}
+  (
+  {new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+  })}
+  ){" "}✅Uploaded</p>
       <button style={{backgroundColor:"#434142",border:"none",borderRadius:"2px",width:"80px",height:"30px"}}
         onClick={() => del(id)}
         className="deletebutton"
@@ -74,7 +87,7 @@ const Add=()=>{
 
         
               <div className="noteform" style={{position:"relative",marginLeft:"30%"}}>
-              <form style={{width:"510px",position:"fixed",backgroundColor:"black",boxShadow:"1px solid white"}} onSubmit={(e)=>{
+              <form style={{width:"510px",height:"300px",position:"fixed",backgroundColor:"black",boxShadow:"1px solid white"}} onSubmit={(e)=>{
                 e.preventDefault();
                 Add()
               
@@ -84,12 +97,12 @@ const Add=()=>{
               }}>
                 
                   <label>
-                    <p style={{marginTop:"20px",textAlign:"left",paddingTop:"20px"}}>Note what's in your mind?</p> <textarea className="typenote" placeholder="Type your notes" ref={inputRef} style={{resize:"none",overFlowY:"auto",border:"1px solid #cc",width:"500px",height:"90px"}}required></textarea>
+                    <p style={{marginTop:"20px",textAlign:"left",paddingTop:"20px"}}>Note what's in your mind?</p> <textarea className="typenote" placeholder="Type your notes" ref={inputRef} style={{resize:"none",overFlowY:"auto",border:"1px solid #cc",width:"500px",height:"100px"}}required></textarea>
                    <button type="submit"  style={{width:"100px",height:"30px",backgroundColor:"rgb(6, 209, 132)",fontSize:"12px",marginLeft:"34em",border:"none",color:"grey",}}>Add note</button>
                   </label>
                 </form>
-               <p style={{fontSize:"20px",fontWeight:"lighter",marginTop:"220px",backgroundColor:'#a41d89',color:"white",textAlign:"center",width:"510px",height:"40px",paddingTop:"10px"}}>Your notes</p>
-               <p style={{fontSize:"13px",fontWeight:"lighter",marginRight:"85%",marginTop:"20px",color:"white",position:"fixed",width:"200px",background:"grey",borderRadius:"10px",height:"30px"}}>You have {data.length}_notes 
+               <p style={{fontSize:"20px",fontWeight:"lighter",marginTop:"220px",backgroundColor:'#a41d89',color:"white",textAlign:"center",width:"510px",height:"40px",paddingTop:"10px",position:"fixed"}}>Your notes</p>
+               <p style={{fontSize:"13px",fontWeight:"lighter",marginRight:"85%",marginTop:"250px",color:"white",position:"fixed",width:"200px",background:"grey",borderRadius:"10px",height:"30px"}}>You have {data.length}_notes 
                 
                </p>
 
