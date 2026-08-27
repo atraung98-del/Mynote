@@ -109,3 +109,58 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+.success-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.success-modal {
+    width: 360px;
+    padding: 35px 25px;
+
+    background: white;
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1976d2;
+    color: white;
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.success-modal h2 {
+    margin-bottom: 10px;
+}
+
+.success-modal p {
+    color: #555;
+}
+
+.success-small {
+    font-size: 13px;
+    color: #999 !important;
+}

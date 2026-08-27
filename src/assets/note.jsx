@@ -1,5 +1,5 @@
 import {useState,useEffect,useRef} from "react"
-
+import "src/index.css";
 function Items({id,name,del}){
   return(
     <div style={{marginTop:"50px"}}>
@@ -24,11 +24,14 @@ function Items({id,name,del}){
   )
 }
  export function Notes(){
-  
+  const [successModal,setSuccessModal]=useState(false)
   const [data,setData]=useState(()=>{
     return JSON.parse(localStorage.getItem("posts"))|| [];
   });
-
+  
+  setTimeout(()=>{
+    setSuccessModal(true);
+  },1500)
   useEffect(() => {
     localStorage.setItem("posts", JSON.stringify(data));
   }, [data]);
@@ -93,7 +96,27 @@ const Add=()=>{
   />
 ))}
                 </ul>
-               
+               {successModal && (
+    <div className="success-overlay">
+        <div className="success-modal">
+
+            <div className="success-icon">
+                ✓
+            </div>
+
+            <h2>Account Created!</h2>
+
+            <p>
+                Welcome to Home-in-Japan 🎉
+            </p>
+
+            <p className="success-small">
+                Taking you to your dashboard...
+            </p>
+
+        </div>
+    </div>
+)}
                 </div>
               
             
