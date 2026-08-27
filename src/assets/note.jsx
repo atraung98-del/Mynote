@@ -106,7 +106,7 @@ const Add=()=>{
                 
                </p>
 
-                <ul className="decor" style={{color:"white",overFlowY:"auto"}}>
+                <ul className="decor" style={{color:"white",overFlowY:"auto",marginTop:"300px"}}>
                   {data.map((item) => (
   <Items 
     key={item.id}
