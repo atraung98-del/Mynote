@@ -1,5 +1,5 @@
 import {useState,useEffect,useRef} from "react"
-import "src/index.css";
+import "/src/index.css";
 function Items({id,name,del}){
   return(
     <div style={{marginTop:"50px"}}>
@@ -24,14 +24,16 @@ function Items({id,name,del}){
   )
 }
  export function Notes(){
-  const [successModal,setSuccessModal]=useState(false)
+  const [successModal,setSuccessModal]=useState(false);
+  
   const [data,setData]=useState(()=>{
     return JSON.parse(localStorage.getItem("posts"))|| [];
   });
   
-  setTimeout(()=>{
-    setSuccessModal(true);
-  },1500)
+ 
+    
+  
+ 
   useEffect(() => {
     localStorage.setItem("posts", JSON.stringify(data));
   }, [data]);
@@ -51,6 +53,10 @@ const Add=()=>{
   id:Date.now(),Note
  }
  
+ setSuccessModal(true);
+ setTimeout(()=>{
+  setSuccessModal(false)
+ },3000)
 // const remove=(id)=>{
 //  setData(data.filter((items) => items.id !== id))
 // }
@@ -60,6 +66,7 @@ const Add=()=>{
  setData(prev=>[newItems,...prev])
  console.log(localStorage.setItem("note",JSON.stringify(Note)|| []));
  alert("You add note successfully")
+ 
 }
 
     return(
