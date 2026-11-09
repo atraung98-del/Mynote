@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link src="https://pixabay.com/sound-effects/film-special-effects-sound-effect-happy-birthday-music-box-333245/">
+<head>
+<meta charset="UTF-8">
+
+<title>Happy Birthday Icon</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #ffe6f0;
+        padding-top: 50px;
+    }
+    .icon {
+        font-size: 80px;
+        animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+        from { transform: translateY(0); }
+        to { transform: translateY(-10px); }
+    }
+    .message {
+        font-size: 24px;
+        color: #ff3399;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="icon" id="birthdayIcon">🎂🎈🎉</div>
+<div class="message" id="birthdayMessage"></div>
+
+<div><iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/5u4xTa3LR2U?si=VG5SOmrZePkvlmtR"
+        title="Happy Birthday Video"
+        allowfullscreen>
+    </iframe></div>
+
+<script>
+    // JavaScript to set a dynamic message
+    const message = "Happy Birthday! from Aung Thura =>wish you about=>Take care your health and yourself.";
+    document.getElementById("birthdayMessage").textContent = message;
+    document.getElementById("audioplay").play();
+    // Optional: Add a simple animation effect
+    let colors = ["#ff3399", "#ff6600", "#3399ff", "#33cc33"];
+    let index = 0;
+    setInterval(() => {
+        document.getElementById("birthdayMessage").style.color = colors[index];
+        index = (index + 1) % colors.length;
+    }, 500);
+
+    function playsound(url){
+        const audioeffect=new Audio(url);
+        audioeffect.play();
+
+    }
+    playsound("https://pixabay.com/sound-effects/film-special-effects-sound-effect-happy-birthday-music-box-333245/")
+</script>
+
+</body>
+</html>
